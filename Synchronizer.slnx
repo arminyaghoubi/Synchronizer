@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Synchronizer.API/Synchronizer.API.csproj" Id="6068dd47-50d7-4184-a89c-0489626ceafe" />
+    <Project Path="Synchronizer.Application/Synchronizer.Application.csproj" Id="aa4df3ea-8938-4ba8-b4ca-08acda036d03" />
+    <Project Path="Synchronizer.Domain/Synchronizer.Domain.csproj" Id="2bd35e63-a521-4d90-9ee7-8f9f3abdc105" />
+    <Project Path="Synchronizer.Infrastructure/Synchronizer.Infrastructure.csproj" Id="3729aeb8-821a-4569-871c-76c3bd47592a" />
+  </Folder>
+</Solution>
