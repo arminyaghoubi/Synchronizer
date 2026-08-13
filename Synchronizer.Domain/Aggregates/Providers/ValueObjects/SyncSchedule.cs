@@ -7,6 +7,8 @@ public sealed record SyncSchedule : ValueObject
     public string CronExpression { get; } = null!;
     public int MaxRetryCount { get; }
 
+    private SyncSchedule() { }
+
     private SyncSchedule(string cron, int maxRetryCount)
     {
         CronExpression = cron;

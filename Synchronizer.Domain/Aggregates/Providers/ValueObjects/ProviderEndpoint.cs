@@ -7,6 +7,8 @@ public sealed record ProviderEndpoint : ValueObject
     public string Value { get; } = null!;
     public int TimeoutSeconds { get; }
 
+    private ProviderEndpoint() { }
+
     private ProviderEndpoint(string url, int timeoutSeconds)
     {
         Value = url;
