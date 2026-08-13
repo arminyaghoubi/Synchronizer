@@ -8,7 +8,7 @@ public sealed class ProviderConfiguration : IEntityTypeConfiguration<Provider>
 {
     public void Configure(EntityTypeBuilder<Provider> builder)
     {
-        builder.HasKey(x=> x.Id);
+        builder.HasKey(x => x.Id);
 
         builder.HasIndex(x => x.Name)
             .IsUnique();

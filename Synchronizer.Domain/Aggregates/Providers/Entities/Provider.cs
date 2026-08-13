@@ -35,6 +35,7 @@ public sealed class Provider : AggregateRoot<int>
     }
 
     public static Result<Provider> Create(
+        int id,
         string name,
         ProviderEndpoint endpoint,
         SyncSchedule schedule)
@@ -42,7 +43,7 @@ public sealed class Provider : AggregateRoot<int>
         if (string.IsNullOrEmpty(name))
             return Result<Provider>.Failure("Provider name is required");
 
-        Provider provider = new(0, name, endpoint, schedule, true, DateTime.Now);
+        Provider provider = new(id, name, endpoint, schedule, true, DateTime.Now);
         provider.AddDomainEvent(new ProviderCreatedDomainEvent(provider.Id, provider.Name));
 
         return Result<Provider>.Success(provider);
