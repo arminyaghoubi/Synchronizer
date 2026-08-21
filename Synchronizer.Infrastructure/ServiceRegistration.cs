@@ -2,7 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Synchronizer.Application.Abstractions;
 using Synchronizer.Domain.Aggregates.Providers.Repositories;
+using Synchronizer.Infrastructure.Adapters.TMobile;
 using Synchronizer.Infrastructure.BackgroundJobs.Hangfire;
 using Synchronizer.Infrastructure.BackgroundJobs.Hangfire.Scheduling;
 using Synchronizer.Infrastructure.Persistence;
@@ -43,6 +46,15 @@ public static class ServiceRegistration
         services.AddHangfireServer();
 
         services.AddHostedService<HangfireProviderJobScheduler>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddProviderAdapterServices(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddKeyedScoped<IProviderAdapter, TMobileAdapter>(1);
 
         return services;
     }

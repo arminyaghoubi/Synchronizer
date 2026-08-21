@@ -7,7 +7,7 @@ public sealed class Product : Entity<int>
     public string Name { get; private set; } = null!;
     public decimal Price { get; private set; }
     public decimal VAT { get; private set; }
-    public string ExtraData { get; private set; } = null!;
+    public string? ExtraData { get; private set; }
     public bool IsActive { get; private set; }
     public int ProviderId { get; private set; }
     public string ExternalId { get; private set; } = null!;

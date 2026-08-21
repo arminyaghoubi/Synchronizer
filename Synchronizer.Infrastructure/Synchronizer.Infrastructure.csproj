@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Synchronizer.Application\Synchronizer.Application.csproj" />
     <ProjectReference Include="..\Synchronizer.Domain\Synchronizer.Domain.csproj" />
   </ItemGroup>
 

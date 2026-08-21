@@ -24,9 +24,11 @@ public sealed class ProviderRepository(SynchronizerDbContext context) : IProvide
         return providers;
     }
 
-    public async Task<Provider?> GetByIdAsync(int id, CancellationToken cancellation)
+    public async Task<Provider?> GetByIdWithProductsAsync(int id, CancellationToken cancellation)
     {
-        var provider = await context.Providers.FindAsync(id, cancellation);
+        var provider = await context.Providers
+            .Include(x => x.Products)
+            .FirstOrDefaultAsync(x => x.Id == id, cancellation);
         return provider;
     }
 

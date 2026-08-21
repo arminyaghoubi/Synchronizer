@@ -27,7 +27,7 @@ public sealed class HangfireProviderJobScheduler(
                 {
                     jobManager.AddOrUpdate<ProviderSynchronizerJob>(
                         jobId,
-                        j => j.ExecutionAsync(provider.Id),
+                        j => j.ExecutionAsync(provider.Id, cancellation),
                         provider.Schedule.CronExpression);
                 }
                 else
